@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Search Results</title>
+    <style>
+      /* Add any additional styling you may want */
+      .result-item {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+      .result-title {
+        font-weight: bold;
+        color: #2980b9;
+      }
+      .result-snippet {
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-container">
+          <div class="logowapper">Peaceful Soul</div>
+          <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+          <ul id="navbar" class="hidden">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Counseling</a></li>
+            <li><a href="#">Engagement</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Search Results</h1>
+      <div id="search-results"></div>
+    </main>
+
+    <footer class="section-p2">
+      <div class="col">
+        <img
+          class="logo"
+          src="logo.jpg"
+          alt="Cojin Diapers Logo"
+          width="100"
+          height="100"
+        />
+        <h4>Contact Us</h4>
+        <p>
+          Address: <strong>Madhyapur Thimi</strong> <br />Opposite to <br /><strong
+            >NIC Asia Bank, Bhaktapur</strong
+          >
+        </p>
+        <p>
+          <strong>Phone:</strong>
+          <a href="tel:+9779706011244">+977 9706011244</a>
+        </p>
+        <p><strong>Hours:</strong> 5:00-19:00, Monday-Friday</p>
+      </div>
+
+      <div class="col">
+        <h4>Quick Links</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="index.html">Home</a>
+      </div>
+
+      <div class="col">
+        <h4>Follow Us</h4>
+        <p>Stay connected with us on social media:</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.youtube.com/watch?v=YRJ6xoiRcpQ" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Get the search query from the URL parameters
+      const params = new URLSearchParams(window.location.search);
+      const query = params.get("q"); // Changed to 'q' to match index.html
+
+      if (query) {
+        searchWikipedia(query);
+      }
+
+      function searchWikipedia(query) {
+        const url = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(
+          query
+        )}&format=json&origin=*`;
+
+        fetch(url)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            const results = data.query.search;
+            const resultsContainer = document.getElementById("search-results");
+            resultsContainer.innerHTML = ""; // Clear previous results
+
+            if (results.length === 0) {
+              resultsContainer.innerHTML = "<p>No results found.</p>";
+              return;
+            }
+
+            results.forEach((item) => {
+              const resultItem = document.createElement("div");
+              resultItem.classList.add("result-item");
+              resultItem.innerHTML = `
+                            <h2 class="result-title">${item.title}</h2>
+                            <div class="result-snippet">${item.snippet}</div>
+                            <a href="https://en.wikipedia.org/wiki/${encodeURIComponent(
+                              item.title
+                            )}" target="_blank">Read more</a>
+                            <hr />
+                        `;
+              resultsContainer.appendChild(resultItem);
+            });
+          })
+          .catch((error) => {
+            console.error("Error fetching Wikipedia data:", error);
+          });
+      }
+    </script>
+  </body>
+</html>

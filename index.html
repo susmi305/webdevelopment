@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo.jpg" alt="img" />
+
+    <title>Peaceful Soul</title>
+    <meta
+      name="description"
+      content="Your sanctuary for tranquility and personal growth. Discover the transformative power of meditation in a nurturing and supportive environment."
+    />
+    <meta name="keywords" content="Peaceful haven for inner tranquility." />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Search ko lagi */
+      #search-results {
+        margin-top: 20px;
+        padding: 10px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .result-item {
+        margin: 10px 0;
+      }
+
+      .result-title {
+        font-weight: bold;
+        color: #2980b9;
+      }
+
+      .result-snippet {
+        margin-top: 5px;
+        color: #555;
+      }
+
+      #marquee {
+        width: cover;
+        overflow: hidden;
+        position: relative;
+      }
+
+      #marquee div {
+        display: flex;
+        width: max-content;
+        animation: scroll 15s linear infinite;
+      }
+
+      #marquee img {
+        width: auto;
+        height: auto;
+        margin-right: 10px;
+        object-fit: contain;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    <header>
+      <nav>
+        <div class="nav-container">
+          <div class="logowapper">Peaceful Soul</div>
+          <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+          <ul id="navbar" class="hidden">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#meditation-section">Resources</a></li>
+            <li><a href="#resources-support">Support</a></li>
+            <li><a href="#services">Counseling</a></li>
+            <li><a href="#services">Engagement</a></li>
+          </ul>
+          <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search..." />
+            <button type="submit" onclick="searchWikipedia()">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="half-page-img">
+      <img src="9.jpg" alt="Banner Image" />
+    </section>
+    <!-- <audio autoplay loop>
+      <source src="s.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio> -->
+
+    <section id="marquee">
+      <div>
+        <img src="4.jpg" alt="Meditation" />
+        <img src="2.jpg" alt="Yoga" />
+        <img src="3.jpeg" alt="Meditation" />
+        <img src="4.jpg" alt="Yoga" />
+        <img src="4.jpg" alt="Meditation" />
+        <img src="2.jpg" alt="Yoga" />
+        <img src="3.jpeg" alt="Meditation" />
+        <img src="4.jpg" alt="Yoga" />
+        <img src="4.jpg" alt="Meditation" />
+        <img src="2.jpg" alt="Yoga" />
+        <img src="3.jpeg" alt="Meditation" />
+        <img src="4.jpg" alt="Yoga" />
+      </div>
+    </section>
+
+    <section id="welcome" class="section-p1">
+      <div class="welcome-box">
+        <h1>Welcome to Peaceful Soul</h1>
+        <p>
+          Peaceful Soul is a sanctuary where you can embark on a journey
+          toward mental wellness and emotional resilience. Our platform provides
+          a comprehensive collection of educational resources, peer support, and
+          professional counseling to help you navigate life’s challenges.
+          Whether you're seeking to understand more about mental health or are
+          looking for a supportive community, we're here to uplift, guide, and
+          empower you to find your inner calm and balance.
+        </p>
+        <h2>Why Meditation is Important</h2>
+        <p>
+          Meditation is a powerful tool for promoting emotional health, reducing
+          stress, and improving overall mental clarity. By taking time to focus
+          on the present moment and breathe deeply, meditation helps calm the
+          mind and bring awareness to our thoughts and emotions. Studies have
+          shown that regular meditation can help reduce anxiety, enhance
+          concentration, and even boost creativity. At Peaceful Soul, we
+          offer guided meditation sessions to help you integrate this practice
+          into your daily routine and reap its long-lasting benefits.
+        </p>
+        <h2>Understanding Depression: An Important Issue</h2>
+        <p>
+          Depression is one of the most prevalent mental health challenges in
+          the world today, affecting millions of people across all age groups
+          and backgrounds. It can leave individuals feeling hopeless,
+          disconnected, and overwhelmed. Recognizing depression as a serious
+          issue is the first step toward addressing it. At Peaceful Soul we
+          emphasize the importance of understanding depression, seeking timely
+          support, and breaking the stigma surrounding mental health struggles.
+          We provide resources and access to professional help, ensuring that no
+          one has to face depression alone.
+        </p>
+      </div>
+    </section>
+
+    <section id="meditation-section">
+      <div class="meditation-box">
+        <h2>Why Meditation is Important</h2>
+        <p>
+          Meditation is a powerful tool for promoting emotional health, reducing
+          stress, and improving overall mental clarity. By taking time to focus
+          on the present moment, meditation helps calm the mind and bring
+          awareness to our thoughts and emotions. At Peaceful Soul, we offer
+          guided meditation sessions to help you integrate this practice into
+          your daily routine.
+        </p>
+      </div>
+    </section>
+
+    <section id="depression-section">
+      <div class="depression-box">
+        <h2>Understanding Depression: An Important Issue</h2>
+        <p>
+          Depression is one of the most prevalent mental health challenges
+          today, affecting millions worldwide. Recognizing depression as a
+          serious issue is the first step toward addressing it. At Peaceful Soul, 
+          we provide resources and access to professional help, ensuring
+          no one faces depression alone.
+        </p>
+      </div>
+    </section>
+
+    <div class="description-box">
+      <h2>What We Offer</h2>
+      <ul>
+        <li>
+          <i class="fas fa-book-open" aria-hidden="true"></i> Educational
+          Resources on mental health topics through articles, videos, and
+          infographics.
+        </li>
+        <li>
+          <i class="fas fa-users" aria-hidden="true"></i> Peer Support Forums
+          where you can connect and share experiences with others.
+        </li>
+        <li>
+          <i class="fas fa-headset" aria-hidden="true"></i> Access to
+          Professional Counseling with secure, encrypted video sessions.
+        </li>
+        <li>
+          <i class="fas fa-heart" aria-hidden="true"></i> Advocacy & Engagement
+          opportunities through volunteer work, campaigns, and events.
+        </li>
+      </ul>
+    </div>
+
+    <div class="video-container">
+      <iframe
+        width="100%"
+        height="500"
+        src="https://www.youtube.com/embed/q0DMYs4b2Yw?start=88&autoplay=1&mute=1&loop=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <section id="resources-support" class="section-p1">
+      <div class="pro-container">
+        <div class="pro">
+          <img src="resouce1.jpg" alt="Understanding Anxiety" />
+          <div class="des">
+            <span><strong>Educational Resource</strong></span>
+            <h4>Understanding Anxiety</h4>
+            <h3>A Complete Guide to Managing Anxiety</h3>
+            <p>
+              Learn about the causes, symptoms, and effective strategies for
+              managing anxiety in everyday life.
+            </p>
+            <br />
+            <a href="read.html" class="read-button">Read more</a>
+          </div>
+        </div>
+
+        <!-- Educational Resource 2 -->
+        <div class="pro">
+          <img src="resource2.jpg" alt="Mindfulness Techniques" />
+          <div class="des">
+            <span><strong>Educational Resource</strong></span>
+            <h4>Mindfulness Techniques</h4>
+            <h3>Practices for Mental Clarity</h3>
+            <p>
+              Explore mindfulness exercises that can help you stay grounded and
+              reduce stress.
+            </p>
+            <br />
+            <a href="read2.html" class="read-button">Read more</a>
+          </div>
+        </div>
+
+        <!-- Educational Resource 3 (New) -->
+        <div class="pro">
+          <img src="resource5.jpeg" alt="Managing Stress Effectively" />
+          <div class="des">
+            <span><strong>Educational Resource</strong></span>
+            <h4>Managing Stress Effectively</h4>
+            <h3>Techniques for Reducing Everyday Stress</h3>
+            <p>
+              Discover practical techniques and habits that can help manage
+              stress in daily life.
+            </p>
+            <br />
+            <a href="read3.html" class="read-button">Read more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Counseling, Advocacy, and Engagement Section -->
+    <section id="services">
+      <h2>Professional Counseling and Advocacy</h2>
+      <p class="section-description">
+        At Peaceful Soul, we offer professional counseling services to guide
+        you through emotional challenges, mental health struggles, and personal
+        growth. Our licensed counselors provide a safe, non-judgmental
+        environment to support your healing and wellness journey.
+      </p>
+
+      <div class="service-container">
+        <!-- Counseling Service -->
+        <div class="service-box">
+          <img
+            src="counseling.jpg"
+            alt="Counseling Icon"
+            class="service-icon"
+          />
+          <h3>One-on-One Counseling</h3>
+          <p>
+            Get personalized support from certified counselors to help you
+            navigate stress, anxiety, depression, and more. Whether you need
+            help with relationships, personal development, or mental well-being,
+            our professionals are here for you.
+          </p>
+          <a href="contact.html" class="service-button">Learn More</a>
+        </div>
+
+        <!-- Advocacy Service -->
+        <div class="service-box">
+          <img
+            src="advocacy-icon.png"
+            alt="Advocacy Icon"
+            class="service-icon"
+          />
+          <h3>Mental Health Advocacy</h3>
+          <p>
+            We believe in empowering individuals through advocacy. Our team
+            works to raise awareness about mental health, fight stigma, and
+            connect you with resources and networks that promote well-being and
+            equality.
+          </p>
+          <a href="contact.html" class="service-button">Join Our Advocacy</a>
+        </div>
+
+        <!-- Engagement and Community -->
+        <div class="service-box">
+          <img
+            src="community-icon.png"
+            alt="Community Icon"
+            class="service-icon"
+          />
+          <h3>Community Engagement</h3>
+          <p>
+            Engage with a community of like-minded individuals through events,
+            workshops, and support groups. We foster an environment where you
+            can share experiences, build connections, and grow together.
+          </p>
+          <a href="contact.html" class="service-button">Get Involved</a>
+        </div>
+      </div>
+    </section>
+    <div id="search-results"></div>
+    <footer class="section-p2">
+      <div class="col">
+        <img
+          class="logo"
+          src="logo.jpg"
+          alt="Cojin Diapers Logo"
+          width="100"
+          height="100"
+        />
+        <h4>Contact Us</h4>
+        <p>
+          Address: <strong>Madhyapur Thimi</strong> <br />Opposite to <br /><strong
+            >NIC Asia Bank, Bhaktapur</strong
+          >
+        </p>
+        <p>
+          <strong>Phone:</strong>
+          <a href="tel:+9779706011244">+977 9706011244</a>
+        </p>
+        <p><strong>Hours:</strong> 5:00-19:00, Monday-Friday</p>
+      </div>
+
+      <div class="col">
+        <h4>Quick Links</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="index.html">Home</a>
+      </div>
+
+      <div class="col">
+        <h4>Follow Us</h4>
+        <p>Stay connected with us on social media:</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.youtube.com/watch?v=YRJ6xoiRcpQ" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const navbar = document.getElementById("navbar");
+        navbar.classList.toggle("hidden");
+      }
+
+      function searchWikipedia() {
+        const query = document.getElementById("search-input").value;
+        if (query) {
+          window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+        }
+      }
+    </script>
+  </body>
+</html>
